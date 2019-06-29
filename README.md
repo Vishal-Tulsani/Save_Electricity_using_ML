@@ -1,6 +1,6 @@
 # Save Electricity using Machine Learning
 
-![](https://www.pyimagesearch.com/wp-content/uploads/2016/09/multi_bright_regions_result_02.jpg)
+![Detection of light using openCV](https://user-images.githubusercontent.com/40906718/60383821-d8391380-9a93-11e9-8db0-48206d1f9f18.jpg)
 
 Recognize and Save electricity from Python or from the command line with
 the world's simplest camera library .
@@ -43,30 +43,24 @@ import cv2
 
 All packages contain haarcascade files. cv2.data.haarcascades can be used as a shortcut to the data folder. For example:
 
-cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+cv2.CascadeClassifier(cv2.data.haarcascades + "face.xml")
 '''
 #### Find and check the status of light
 
 Get the locations and outlines of each person's eyes, nose, mouth and chin.
 
-![](https://cloud.githubusercontent.com/assets/896692/23625282/7f2d79dc-025d-11e7-8728-d8924596f8fa.png)
+![](https://user-images.githubusercontent.com/40906718/60383845-336b0600-9a94-11e9-954d-0e1c59e18873.png)
 
 ```python
-import face_recognition
-image = face_recognition.load_image_file("your_file.jpg")
-face_landmarks_list = face_recognition.face_landmarks(image)
+from imutils import contours
+from skimage import measure
+import numpy as np
+import imutils
+import cv2
 ```
+#### Identify status of Light
 
-Finding facial features is super useful for lots of important stuff. But you can also use it for really stupid stuff
-like applying [digital make-up](https://github.com/ageitgey/face_recognition/blob/master/examples/digital_makeup.py) (think 'Meitu'):
-
-![](https://cloud.githubusercontent.com/assets/896692/23625283/80638760-025d-11e7-80a2-1d2779f7ccab.png)
-
-#### Identify faces in pictures
-
-Recognize who appears in each photo.
-
-![](https://cloud.githubusercontent.com/assets/896692/23625229/45e049b6-025d-11e7-89cc-8a71cf89e713.png)
+Recognize what is status.
 
 ```python
 import face_recognition

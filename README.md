@@ -303,30 +303,41 @@ From all this things you will bwe avle to run the message if the lights are 'ON;
 ## Important Points:
 
 when you clone the Repository :
-\*Save_Electricity_using_ML
-   \*static
-       |*style
-   \*templates
-       |*home
-       |*index
-       |*layout
-       |*profile
-       |*register
-   |*detect_bright_spots.py
-   |*eye.xml
-   |*face.xml
-   |*live_eye_with_face_detection_cv2.py
-   |*main.py
+\__Save_Electricity_using_ML
+   \__static
+       |__style
+   \__templates
+       |__home
+       |__index
+       |__layout
+       |__profile
+       |__register
+   |__detect_bright_spots.py
+   |__eye.xml
+   |__face.xml
+   |__live_eye_with_face_detection_cv2.py
+   |__main.py
    
 Each file will contain the following:
+    
     main.py — This will be our main project file, all our Python code will be in this file (Routes, MySQL connection, validation, etc).
+    
     index.html — Login form created with HTML5 and CSS3.
+    
     register.html — Registration form created with HTML5 and CSS3.
+    
     home.html — The home template to display for logged-in users.
+    
     profile.html — The profile template to display for logged-in users.
+    
     layout.html — The layout template for the home and profile templates.
+    
     style.css — The stylesheet for our login and registration system.
+    
     live_eye_with_face_detection_cv2.py — python script for face and eye detection.
+    
     detect_bright_spots.py — python script for light detection.
+    
     face.xml — Cascade datasets for face.
+    
     eye.xml — Cascade datasets for eye.

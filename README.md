@@ -155,7 +155,6 @@ USE `pythonlogin`;
          PRIMARY KEY (`id`)
          ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-![](https://codeshack.io/web/img/pythonlogin/mysql-workbench-login-system.png)
 
 INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `phone_no`) VALUES (1, 'test', 'test', 'test@test.com', '1234567890');
 
@@ -303,6 +302,7 @@ From all this things you will bwe avle to run the message if the lights are 'ON;
 ## Important Points:
 
 when you clone the Repository :
+
 \__Save_Electricity_using_ML
    
    \__static

@@ -1,8 +1,14 @@
 # Save Electricity using Machine Learning
+
 ![Detection of light using openCV](https://user-images.githubusercontent.com/40906718/60383821-d8391380-9a93-11e9-8db0-48206d1f9f18.jpg)
+
+
 From this we can find the status of the light, If the lights are 'ON' then the camera checks for presence of Human in the room if there is no Human Presence then it will send the text message to owner of house.
+
 Built using [openCV](http://opencv.net/)'s state-of-the-art camera built with machine learning.
+
 [![PyPI]](https://pypi.org/)
+
 [![Documentation Status](https://readthedocs.org/projects/light-detection/badge/?version=latest)](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html)
 
 ## Features
@@ -11,7 +17,6 @@ Built using [openCV](http://opencv.net/)'s state-of-the-art camera built with ma
 
 Find all the status of light from live camera:
 
-'''
 There are four different packages and you should select only one of them. Do not install multiple different packages in the same environment. There is no plugin architecture: all the packages use the same namespace (cv2). If you installed multiple different packages in the same environment, uninstall them all with pip uninstall and reinstall only one package.
 
 a. Packages for standard desktop environments (Windows, macOS, almost any GNU/Linux distribution)
@@ -33,7 +38,7 @@ import cv2
 All packages contain haarcascade files. cv2.data.haarcascades can be used as a shortcut to the data folder. For example:
 
 cv2.CascadeClassifier(cv2.data.haarcascades + "face.xml")
-'''
+
 #### Find and check the status of light
 
 Get the locations and outlines of each person's eyes, nose, mouth and chin.
@@ -47,7 +52,7 @@ import cv2
 ```
 #### Identify status of Light
 
-Recognize what is status.
+Recognize what is status of light .
 
 ```python
 # load the image, convert it to grayscale, and blur it
@@ -56,18 +61,18 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 blurred = cv2.GaussianBlur(gray, (11, 11), 0)
 ```
 
-You can even use this library with other Python libraries :
-
 ![](https://user-images.githubusercontent.com/40906718/60395083-b8fdbd00-9b4b-11e9-8cce-8cd6ad4b1f3c.png)
 
 #### Detect the Human Presence
 For this we need only two things :
 * OpenCV
 * [Download the face datasets](https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalcatface.xml)
-* [Download the eyes dtatests](https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_eye.xml)
+* [Download the eyes datatests](https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_eye.xml)
 
 Detect the Face and Eyes of Human
+
 ![unknown](https://opencv-python-tutroals.readthedocs.io/en/latest/_images/face.jpg)
+
 ```python
 import cv2
 import numpy as np
@@ -78,7 +83,9 @@ eyehaar=cv2.CascadeClassifier('eye.xml')
 #### Sending Text Message
 For sending text message we need to download Twilio API:
   * [Download twilio API](https://pypi.org/project/twilio/)
+
 Genrally Twilio Api used for sending text message, Whatsapp message and we can use it for call using python language.
+
 ![](https://s3.amazonaws.com/com.twilio.prod.twilio-docs/original_images/sms-2-way.png)
 
 ```python
@@ -117,7 +124,7 @@ pip3 install opencv-contrib-python
 
 While Windows isn't officially supported, helpful users have posted instructions on how to install this library:
 
-  * [@masoudr's Windows 10 installation guide (openCV)](https://docs.opencv.org/3.1.0/d5/de5/tutorial_py_setup_in_windows.html)
+  * [Windows 10 installation guide (openCV)](https://docs.opencv.org/3.1.0/d5/de5/tutorial_py_setup_in_windows.html)
 
 #### Installing a more required python libraries
   * [Download the imutils](https://pypi.org/project/imutils/).
@@ -125,16 +132,43 @@ While Windows isn't officially supported, helpful users have posted instructions
   * [Download the numpy](https://www.numpy.org/) 
 
 # How TO START (Working)
-First of all You need to install FLASK for using it on your server:
-  * [Flask](http://flask.pocoo.org/docs/1.0/installation/)
-  * [Flask](https://pypi.org/project/Flask/)
+First you need to install if you not have is MySQL:
+Creating the Database and setting-up Tables
+
+MySQL Workbench is a GUI for creating and editing our databases, follow the below instructions.
+
+ Open MySQL Workbench
+ Fill out your MySQL details
+ Click Test Connection, if successful you can click OK
+ Open your connection
+ Execute the following SQL statements:
+ 
+ CREATE DATABASE IF NOT EXISTS `pythonlogin` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `pythonlogin`;
+
+       CREATE TABLE IF NOT EXISTS `accounts` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+  	`username` varchar(50) NOT NULL,
+  	`password` varchar(255) NOT NULL,
+  	`email` varchar(100) NOT NULL,
+	`phone_no` varchar(20) NOT NULL,
+         PRIMARY KEY (`id`)
+         ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+![](https://codeshack.io/web/img/pythonlogin/mysql-workbench-login-system.png)
+
+INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `phone_no`) VALUES (1, 'test', 'test', 'test@test.com', '1234567890');
+
+Second you need to install FLASK for using it on your server:
+  * [Flask docs for installation](http://flask.pocoo.org/docs/1.0/installation/)
+  * [Flask install using pip](https://pypi.org/project/Flask/)
   
 Then you has to just clone this Repository for further working.
 Now you have to run the FLASK server for `main.py` file and Copy the link to browser.
 Then the you have to just go to to the first page of the site which is Login or Registeration Page.
 If you are existing user then just do login else you have to register.
 Then you came to the Profile of the page.
-After you have to change the link from "localhost:port" ---> "localhost:port/camera" then the working of the program starts.
+After you have to change the link from "localhost:port/pythonlogin" ---> "localhost:port/camera" then the working of the program starts.
 
 #### First Detection Of Light
 After importing useful libraries which was declared above:
@@ -269,17 +303,30 @@ From all this things you will bwe avle to run the message if the lights are 'ON;
 ## Important Points:
 
 when you clone the Repository :
-/*Save_Electricity_using_ML
-   /*static
-       /*style
-   /*templates
-       /*home
-       /*index
-       /*layout
-       /*profile
-       /*register
-   /*detect_bright_spots.py
-   /*eye.xml
-   /*face.xml
-   /*live_eye_with_face_detection_cv2.py
-   /*main.py
+\*Save_Electricity_using_ML
+   \*static
+       |*style
+   \*templates
+       |*home
+       |*index
+       |*layout
+       |*profile
+       |*register
+   |*detect_bright_spots.py
+   |*eye.xml
+   |*face.xml
+   |*live_eye_with_face_detection_cv2.py
+   |*main.py
+   
+Each file will contain the following:
+    main.py — This will be our main project file, all our Python code will be in this file (Routes, MySQL connection, validation, etc).
+    index.html — Login form created with HTML5 and CSS3.
+    register.html — Registration form created with HTML5 and CSS3.
+    home.html — The home template to display for logged-in users.
+    profile.html — The profile template to display for logged-in users.
+    layout.html — The layout template for the home and profile templates.
+    style.css — The stylesheet for our login and registration system.
+    live_eye_with_face_detection_cv2.py — python script for face and eye detection.
+    detect_bright_spots.py — python script for light detection.
+    face.xml — Cascade datasets for face.
+    eye.xml — Cascade datasets for eye.

@@ -304,18 +304,31 @@ From all this things you will bwe avle to run the message if the lights are 'ON;
 
 when you clone the Repository :
 \__Save_Electricity_using_ML
+   
    \__static
-       |__style
+   
+   	|__style
+   
    \__templates
-       |__home
-       |__index
-       |__layout
-       |__profile
-       |__register
+   
+   	|__home
+   
+   	|__index
+   
+   	|__layout
+   
+   	|__profile
+   
+   	|__register
+   
    |__detect_bright_spots.py
+   
    |__eye.xml
+   
    |__face.xml
+   
    |__live_eye_with_face_detection_cv2.py
+   
    |__main.py
    
 Each file will contain the following:
